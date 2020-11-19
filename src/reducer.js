@@ -1,5 +1,5 @@
 const initialState = {
-    projects: []
+    projects: [],
  }
   
  const reducer = (prevState=initialState, action) => {
