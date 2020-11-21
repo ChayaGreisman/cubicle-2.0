@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import {connect} from 'react-redux'
+import {Accordion} from 'react-bootstrap'
+import {connect, useSelector, useDispatch} from 'react-redux'
 import * as action from '../actionCreators'
+import Project from '../components/Project'
 
-const Dashboard = (props) => {
+function Dashboard(props){
 
     useEffect(()=>{
         fetch("http://localhost:3000/projects")
@@ -11,9 +13,11 @@ const Dashboard = (props) => {
     }, [props])
 
     return(
-        <div >
+        <div>
             <h1>USER DASHBOARD</h1>
-            {props.projects.map(project=><h3>{project.name}</h3>)}
+            <Accordion>
+                {props.projects.map((project, i) =><Project project={project} key={i}/>)}
+            </Accordion>
         </div>
     )
 }
