@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Accordion} from 'react-bootstrap'
+import {Card, Accordion} from 'react-bootstrap'
 import {connect, useSelector, useDispatch} from 'react-redux'
 import * as action from '../actionCreators'
 import Project from '../components/Project'

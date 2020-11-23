@@ -3,7 +3,6 @@ import {Accordion, Card} from 'react-bootstrap'
 
 function Project(props){
     return(
-        <div>
             <Card>
                 <Accordion.Toggle as={Card.Header} eventKey={props.key}>
                 {props.project.name} - {props.project.deadline}
@@ -12,8 +11,6 @@ function Project(props){
                 <Card.Body>Hello! I'm the body</Card.Body>
                 </Accordion.Collapse>
             </Card>
-        </div>
-        
     );
 
 }
