@@ -15,7 +15,9 @@ function Dashboard(props){
     return(
         <div>
             <h1>USER DASHBOARD</h1>
+            <div class="accordion" id="accordionExample">
                 {props.projects.map((project, i) =><Project project={project} key={i}/>)}
+            </div>
             
         </div>
     )
