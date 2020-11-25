@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import {Card, Accordion} from 'react-bootstrap'
+import {Card, Accordion, Button} from 'react-bootstrap'
 import {connect, useSelector, useDispatch} from 'react-redux'
 import * as action from '../actionCreators'
 import Project from '../components/Project'
@@ -15,10 +15,9 @@ function Dashboard(props){
     return(
         <div>
             <h1>USER DASHBOARD</h1>
-            <div class="accordion" id="accordionExample">
-                {props.projects.map((project, i) =><Project project={project} key={i}/>)}
-            </div>
-            
+            <Accordion>
+                {props.projects.map((project, i) =><Project project={project} key={i} num={i}/>)}
+            </Accordion>
         </div>
     )
 }
