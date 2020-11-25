@@ -10,13 +10,17 @@ function Dashboard(props){
         fetch("http://localhost:3000/projects")
         .then(resp=>resp.json())
         .then(projects=> props.fetchProjects(projects))
+
+        fetch("http://localhost:3000/members")
+        .then(resp=>resp.json())
+        .then(members=> props.fetchMembers(members))
     }, [props])
 
     return(
         <div>
             <h1>USER DASHBOARD</h1>
             <Accordion>
-                {props.projects.map((project, i) =><Project project={project} key={i} num={i}/>)}
+                {props.projects.map((project, i) =><Project project={project} members={props.members} key={i} num={i}/>)}
             </Accordion>
         </div>
     )
@@ -25,11 +29,13 @@ function Dashboard(props){
 const msp=(state)=>{
     return {
         projects: state.projects,
+        members: state.members
     }
 }
 const mdp=(dispatch)=>{
     return {
         fetchProjects: (projects)=>dispatch(action.fetchProjects(projects)),
+        fetchMembers: (members)=>dispatch(action.fetchMembers(members))
     }
 }
 
