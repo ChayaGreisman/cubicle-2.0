@@ -5,11 +5,17 @@
 div.card{
   margin: 10px;
   margin-bottom: 20px;
+  background-color: rgb(164, 219, 236);
+  border-radius: 40px;
+  border: none;
 }
 
 div.card-header{
-  background-color: aliceblue;
-  border-radius: 20px;
+
+}
+
+div.card-body{
+  border: none;
 }
 
 .member-image{
